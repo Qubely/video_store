@@ -54,7 +54,7 @@ return [
         'click_add' => 'You can ad items by clicking add new button',
         '403_no_found' => 'Sorry, permission denied -   403 ',
         '403_no_found_text' => 'You are unable to view this page due to lack of permission',
-        '404_not_found' => 'Sorry, page not found -   404 ',
+        '404_no_found' => 'Sorry, page not found -   404 ',
         '404_not_found_text' => 'Your requested resource wan not found, either deleted or removed ny the user ',
 	]
 ];
