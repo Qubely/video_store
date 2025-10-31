@@ -39,3 +39,16 @@ if (! function_exists('pxLang')) {
 function getPolicyKey($Str,$key) {
     return $Str::lower($Str::replace(' ','_',$key));
 }
+
+
+function viewLanguage($lang) {
+
+    switch ($lang) {
+        case 'cn':
+            return 'Chinese';
+            break;
+        default:
+            return 'English';
+            break;
+    }
+}

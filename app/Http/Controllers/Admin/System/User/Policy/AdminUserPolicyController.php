@@ -13,7 +13,7 @@ class AdminUserPolicyController extends Controller {
 
     use BaseTrait;
     public function __construct(private IAdminUserPolicyRepository $iAdminUserPolicy) {
-        $this->middleware(['auth:admin','HasAdminUserPassword','HasAdminUserAuth']);
+        $this->middleware(['auth:admin','HasAdminUserPassword','HasAdminUserAuth','SetAdminLanguage']);
         $this->lang= 'admin.system.user.policy';
     }
 

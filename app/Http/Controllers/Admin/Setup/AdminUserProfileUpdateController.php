@@ -16,12 +16,15 @@ use Illuminate\Http\JsonResponse;
 use App\Models\AdminUser;
 use App\Http\Requests\AdminUser\Setup\ValidateAdminUserProfileUpdate;
 use Hash;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
+use URL;
 class AdminUserProfileUpdateController extends Controller
 {
     use BaseTrait;
     public function __construct()
     {
-        $this->middleware(['auth:admin','HasAdminUserPassword','HasAdminUserAuth']);
+        $this->middleware(['auth:admin','HasAdminUserPassword','HasAdminUserAuth','SetAdminLanguage']);
         $this->sizes =  [
             ['width'=>300, 'height'=> 300,'com'=> 90],
             ['width'=>80, 'height'=> 80,'com'=> 100],
@@ -129,5 +132,23 @@ class AdminUserProfileUpdateController extends Controller
             "redirect" => 'admin/logout'
         ];
         return $this->response(['type' => 'success', "data" => $reposne]);
+    }
+
+    /**
+     * Set language and redirect to caller site
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function language(Request $request) : RedirectResponse
+    {
+        $lang = $request->lang;
+        if (!in_array($lang, ['en', 'cn'])) {
+            $lang = 'en';
+        }
+        $user = AdminUser::where([['id','=',Auth::user()->id]])->first();
+        $user->local = $lang;
+        $user->save();
+        return redirect(url(URL::previous()));
     }
 }

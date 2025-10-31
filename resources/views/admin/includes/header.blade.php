@@ -26,10 +26,23 @@
             </button>
         </div>
         <div class="d-flex">
+             <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item noti-icon waves-effect dl-" id="langNoti" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <span class="me-2">{{viewLanguage(Auth::user()->local)}}</span> <i class="bx bx-globe"></i>
+                    </div>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="{{url('admin/lang/cn')}}"> Chinese  </a>
+                    <a class="dropdown-item" href="{{url('admin/lang/bn')}}"> English </span></a>
+                </div>
+            </div>
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bx bx-bell"></i>
-                    <span class="badge bg-danger rounded-pill" id="notiCount">0</span>
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <i class="bx bx-bell"></i>
+                        <span class="badge bg-danger rounded-pill" id="notiCount">0</span>
+                    </div>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown" style="">
                     <div class="p-3">
@@ -56,12 +69,16 @@
             </div>
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{ getRowImage(Auth::user(),'80X80') }}" alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">{{Auth::user()->name}}</span>
-                    <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+                    <div class="d-flex flex-row justify-content-center align-items-center">
+                        <div class="mt-2">
+                            <img class="rounded-circle header-profile-user" src="{{ getRowImage(Auth::user(),'80X80') }}" alt="Header Avatar" style="width: 25px;height:25px;">
+                            <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">{{Auth::user()->name}}</span>
+                            <i class="bx bx-arrow-down font-size-15"></i>
+                        </div>
+                    </div>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-                     <a class="dropdown-item" href="{{url('admin/setup/profile-update')}}"><i class="bx bx-user fs-18 align-middle me-1 text-muted"></i> <span class="align-middle"> My Profile  </span></a>
+                    <a class="dropdown-item" href="{{url('admin/setup/profile-update')}}"><i class="bx bx-user fs-18 align-middle me-1 text-muted"></i> <span class="align-middle"> My Profile  </span></a>
                     <a class="dropdown-item" href="{{url('admin/setup/password-update')}}"><i class="bx bx-lock fs-18 align-middle me-1 text-muted"></i> <span class="align-middle"> Change Password  </span></a>
                     <a class="dropdown-item" href="{{url('admin/logout')}}"><i class="bx bx-log-out-circle fs-18 align-middle me-1 text-muted"></i> <span class="align-middle"> Sign out</span></a>
                 </div>

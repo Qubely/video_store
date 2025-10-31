@@ -12,7 +12,7 @@ class AdminUserRoleCrudController  extends Controller {
 
     use BaseTrait;
     public function __construct(private IAdminUserRoleCrudRepository $iAdminUserRoleCrudRepo) {
-        $this->middleware(['auth:admin','HasAdminUserPassword','HasAdminUserAuth']);
+        $this->middleware(['auth:admin','HasAdminUserPassword','HasAdminUserAuth','SetAdminLanguage']);
         $this->lang= 'admin.system.user.user-role';
     }
 

@@ -30,6 +30,7 @@ return new class extends Migration
             $table->dateTime('sent_at')->nullable();
             $table->json('user_access')->nullable();
             $table->string('status',7)->default('Active');
+            $table->string('local',7)->default('en');
             $table->rememberToken();
             $table->timestamps();
         });
