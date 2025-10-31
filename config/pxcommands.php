@@ -2,6 +2,40 @@
 
 return [
     'panels' => [
+        'site' => [
+            'styles' => [
+                'cdns' => [
+                    'bootstrap5',
+                    'swiper',
+                    'boxIcon',
+                    'fontAwesome'
+                ],
+                'local' => [
+                    'px',
+                    'site'
+                ],
+                'conditional' => [
+
+                ]
+            ],
+            'scripts' => [
+                'cdns' => [
+                    'jq',
+                    'bootstrap5',
+                    'popper',
+                    'swiper',
+                    'marquee'
+                ],
+                'local' => [
+                    'px',
+                    'site',
+                    'site/calls'
+                ],
+                'conditional' => [
+
+                ]
+            ]
+        ],
         'admin' => [
             'styles' => [
                 'cdns' => [
@@ -60,7 +94,8 @@ return [
             'jqConfirm' => '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" integrity="sha512-0V10q+b1Iumz67sVDL8LPFZEEavo6H/nBSyghr7mm9JEQkOAm91HNoZQRvQdjennBb/oEuW+8oZHVpIKq+d25g==" crossorigin="anonymous" referrerpolicy="no-referrer" />',
             'datatable5' => '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.10/css/jquery.dataTables.min.css">',
             'dataTableSelectCheckbox' => '<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jquery-datatables-checkboxes@1.2.13/css/dataTables.checkboxes.css">',
-            'dateTimePicker' => '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />'
+            'dateTimePicker' => '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />',
+            'swiper' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>'
         ]
     ],
     'scripts' => [
@@ -73,7 +108,9 @@ return [
             'dataTableSelectCheckbox' => '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-datatables-checkboxes@1.2.13/js/dataTables.checkboxes.min.js"></script>',
             'pdfmake' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js" integrity="sha512-axXaF5grZBaYl7qiM6OMHgsgVXdSLxqq0w7F4CQxuFyrcPmn0JfnqsOtYHUun80g6mRRdvJDrTCyL8LQqBOt/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>',
             'xlsx' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.core.min.js" integrity="sha512-UhlYw//T419BPq/emC5xSZzkjjreRfN3426517rfsg/XIEC02ggQBb680V0VvP+zaDZ78zqse3rqnnI5EJ6rxA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>',
-            'dateTimePicker' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
+            'dateTimePicker' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>',
+            'swiper' => '<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>',
+            'marquee' => '<script src="//cdn.jsdelivr.net/npm/jquery.marquee@1.6.1/jquery.marquee.min.js" type="text/javascript"></script>'
         ]
     ],
     'language' => [

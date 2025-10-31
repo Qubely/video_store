@@ -1,0 +1,11 @@
+@extends('site.layouts.main-layout',["tabTitle" => config('i.service_name')])
+@section('page')
+@include('site.includes.fragments._tab-menu')
+@include('site.includes.fragments._section_items')
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/add_1.png'])
+@include('site.includes.fragments._section_items')
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/add_2.png'])
+@include('site.includes.fragments._section_items')
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/add_3.png'])
+@include('site.includes.fragments._section_items')
+@endsection

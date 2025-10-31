@@ -1,0 +1,13 @@
+@extends('site.layouts.main-layout',["tabTitle" => config('i.service_name')])
+@section('page')
+@include('site.includes.fragments._tab-menu')
+@include('site.pages.category.fragments._cat-list')
+@include('site.includes.fragments._card-display')
+@include('site.pages.category.fragments._pagination')
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/page-two/1.png',['classes' => 'mt-3 mb-3']])
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/page-two/2.png',['classes' => 'mt-3 mb-3']])
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/page-two/3.png',['classes' => 'mt-3 mb-3']])
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/page-two/4.png',['classes' => 'mt-3 mb-3']])
+@include('site.includes.fragments._add-banner',['url' => 'images/temp/page-two/5.png',['classes' => 'mt-3 mb-3']])
+@include('site.includes.fragments._section_items')
+@endsection

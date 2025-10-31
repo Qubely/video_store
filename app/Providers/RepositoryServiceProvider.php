@@ -16,6 +16,8 @@ use App\Repositories\Admin\System\User\UserRole\Crud\IAdminUserRoleCrudRepositor
 use App\Repositories\Admin\System\User\UserRole\Crud\AdminUserRoleCrudRepository;
 use App\Repositories\Admin\System\User\Crud\IAdminUserCrudRepository;
 use App\Repositories\Admin\System\User\Crud\AdminUserCrudRepository;
+use App\Repositories\Home\HomeRepository;
+use App\Repositories\Home\IHomeRepository;
 class RepositoryServiceProvider extends ServiceProvider
 {
         /**
@@ -30,5 +32,7 @@ class RepositoryServiceProvider extends ServiceProvider
             $this->app->bind(abstract: IAdminUserPolicyRepository::class, concrete: AdminUserPolicyRepository::class);
             $this->app->bind(abstract: IAdminUserRoleCrudRepository::class, concrete: AdminUserRoleCrudRepository::class);
             $this->app->bind(abstract: IAdminUserCrudRepository::class, concrete: AdminUserCrudRepository::class);
+            $this->app->bind(abstract: IHomeRepository::class, concrete: HomeRepository::class);
+
         }
 }

@@ -1,0 +1,7 @@
+@include('site.includes.fragments._top-header')
+@include('site.includes.fragments._menu-bar')
+@include('site.includes.fragments._main-menu')
+@include('site.includes.fragments._announcement')
+@include('site.includes.fragments._card-swiper')
+@include('site.includes.fragments._fixed-menus')
+@include('site.includes.fragments._card-display')
