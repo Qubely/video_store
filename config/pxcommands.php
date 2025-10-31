@@ -12,6 +12,7 @@ return [
                     'datatable5'
                 ],
                 'local' => [
+                    'px/plugins',
                     'px',
                     'panel/admin',
                     'panel/minible'
@@ -35,6 +36,7 @@ return [
                     'dateTimePicker'
                 ],
                 'local' => [
+                    'px/plugins',
                     'px',
                     'panel/admin',
                     'panel/minible'
@@ -44,7 +46,8 @@ return [
                     'dashboard',
                     'setup',
                     'reset',
-                    'system'
+                    'system',
+                    'menu-management'
                 ]
             ]
         ]
@@ -83,6 +86,7 @@ return [
         'admin.user.nav' => 'admin/setup/navs/index',
         'admin.system.user' => 'admin/system/user/index',
         'admin.system.user.user-role' => 'admin/system/user/user-role/index',
-        'admin.system.user.policy' => 'admin/system/user/policy/index'
+        'admin.system.user.policy' => 'admin/system/user/policy/index',
+        'admin.menu-management.main-menu.crud' => 'admin/menu-management/main-menu/crud/index'
     ]
 ];
