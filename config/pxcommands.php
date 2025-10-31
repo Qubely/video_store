@@ -87,6 +87,7 @@ return [
         'admin.system.user' => 'admin/system/user/index',
         'admin.system.user.user-role' => 'admin/system/user/user-role/index',
         'admin.system.user.policy' => 'admin/system/user/policy/index',
-        'admin.menu-management.main-menu.crud' => 'admin/menu-management/main-menu/crud/index'
+        'admin.menu-management.main-menu.crud' => 'admin/menu-management/main-menu/crud/index',
+        'admin.menu-management.sub-menu.crud' => 'admin/menu-management/sub-menu/crud/index'
     ]
 ];

@@ -2,12 +2,12 @@
 return [
     'pageTitle' => '',
     'pageSubTitle' => '',
-    'add' => '添加新主菜单',
-    'update' => '更新主菜单',
+    'add' => '添加新子菜单',
+    'update' => '更新子菜单',
     'breadCum' => [
-        'title' => '主菜单',
+        'title' => '子菜单',
         'b1' => '菜单管理',
-        'b2' => '主菜单',
+        'b2' => '子菜单',
         'b3' => '管理'
     ],
     'nav' => [
@@ -15,12 +15,13 @@ return [
     ],
     'fields' => [
         'name' => '名称',
+        'main_menu_id' => '主菜单',
         'status' => '状态'
     ],
     'table' => [
         'id' => 'ID',
         'name' => '名称',
-        'serial' => '序号',
+        'main_menu_id' => '主菜单',
         'status' => '状态',
         'created' => '创建时间',
         'actions' => '操作',

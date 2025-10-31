@@ -6,17 +6,21 @@ use App\Traits\BaseTrait;
 use Illuminate\Database\Eloquent\Model;
 //vpx_imports
 //crudDone
-class MainMenu extends Model
+class SubMenu extends Model
 {
     use BaseTrait;
-    protected $table = "main_menus";
+    protected $table = "sub_menus";
     protected $fillable = [
         'name',
         'status',
         'slug',
-        'serial'
+        'serial',
+        'main_menu_id'
     ];
     //vpx_attach
 
-
+    public function parent()
+    {
+        return $this->hasOne(MainMenu::class,'id','main_menu_id');
+    }
 }

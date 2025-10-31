@@ -38,6 +38,9 @@
                         <li>
                             <a href="{{url('admin/menu-management/main-menu')}}">{{pxLang('admin.main-nav','menu-management.menu.main-menu')}}</a>
                         </li>
+                        <li>
+                            <a href="{{url('admin/menu-management/sub-menu')}}">{{pxLang('admin.main-nav','menu-management.menu.sub-menu')}}</a>
+                        </li>
                     </ul>
                 </li>
                 <li>

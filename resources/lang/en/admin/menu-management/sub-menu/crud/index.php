@@ -2,12 +2,12 @@
 return [
     'pageTitle' => '',
     'pageSubTitle' => '',
-    'add' => 'Add New Main Menu',
-    'update' => 'Update Main Menu',
+    'add' => 'Add New Sub Menu',
+    'update' => 'Update Sub Menu',
     'breadCum' => [
-        'title' => 'Main Menus',
+        'title' => 'Sub Menus',
         'b1' => 'Menu Management',
-        'b2' => 'Main Menu',
+        'b2' => 'Sub Menu',
         'b3' => 'Manage'
     ],
     'nav' => [
@@ -15,12 +15,13 @@ return [
     ],
     'fields' => [
         'name' => 'Name',
+        'main_menu_id' => 'Main Menu',
         'status' => 'Status'
     ],
     'table' => [
         'id' => 'ID',
         'name' => 'Name',
-        'serial' => 'Serial',
+        'main_menu_id' => 'Main Menu',
         'status' => 'Status',
         'created' => 'Created',
         'actions' => 'Actions',

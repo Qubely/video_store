@@ -11,6 +11,10 @@ trait MenuManagementPolicy {
                 [
                     'name' => 'Main Menu Crud',
                     'keys' => ['view','store','bulk_update','delete','pdf','excel','edit']
+                ],
+                [
+                    'name' => 'Sub Menu Crud',
+                    'keys' => ['view','store','bulk_update','delete','pdf','excel','edit']
                 ]
             ]
         ];

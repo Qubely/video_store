@@ -1,16 +1,20 @@
 $(document).ready(function(){
 
-    if ($('#frmStoreMainMenu').length > 0) {
+    if ($('#frmStoreSubMenu').length > 0) {
         let rules = {
             name: {
+                required: true,
+                maxlength: 253
+            },
+            main_menu_id: {
                 required: true,
                 maxlength: 253
             }
         };
         PX.ajaxRequest({
-            element: 'frmStoreMainMenu',
+            element: 'frmStoreSubMenu',
             validation: true,
-            script: 'admin/menu-management/main-menu',
+            script: 'admin/menu-management/sub-menu',
             rules,
             afterSuccess: {
                 type: 'inflate_reset_response_data',
@@ -18,9 +22,13 @@ $(document).ready(function(){
         });
     }
 
-    if ($('#frmUpdateMainMenu').length > 0) {
+    if ($('#frmUpdateSubMenu').length > 0) {
         let rules = {
             name: {
+                required: true,
+                maxlength: 253
+            },
+            main_menu_id: {
                 required: true,
                 maxlength: 253
             },
@@ -30,9 +38,9 @@ $(document).ready(function(){
             }
         };
         PX.ajaxRequest({
-            element: 'frmUpdateMainMenu',
+            element: 'frmUpdateSubMenu',
             validation: true,
-            script: 'admin/menu-management/main-menu/'+$("#patch_id").val(),
+            script: 'admin/menu-management/sub-menu/'+$("#patch_id").val(),
             rules,
             afterSuccess: {
                 type: 'inflate_response_data',
@@ -40,7 +48,7 @@ $(document).ready(function(){
         });
     }
 
-    if ($("#dtMainMenu").length > 0) {
+    if ($("#dtSubMenu").length > 0) {
         const {pageLang={}} = PX?.config;
         const {table={}} = pageLang;
         let col_draft = [
@@ -48,7 +56,7 @@ $(document).ready(function(){
                 data: 'id',
                 title: table?.id
             },
-            {
+            /*{
                 data: null,
                 title: table?.serial,
                 class: 'text-center',
@@ -56,51 +64,54 @@ $(document).ready(function(){
                 render: function (data, type, row) {
                     return `<input type="number" value="` + data.serial + `" class="form-control serial"><input type="hidden" value="` + data.id + `" class="form-control ids">`;
                 }
+            },*/
+            {
+                data: 'parent.name',
+                title: table?.main_menu_id
             },
             {
                 data: 'name',
                 title: table?.name
-            },
-            {
-                data: 'status',
-                title: table?.status
             },
 
             {
                 data: 'created_at',
                 title: table?.created
             },
-
+            {
+                data: 'status',
+                title: table?.status
+            },
             {
                 data: null,
                 title: table?.action,
                 class: 'text-end',
                 render: function (data, type, row) {
-                    return `<a href="${baseurl}admin/menu-management/main-menu/${data.id}/edit" class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                    return `<a href="${baseurl}admin/menu-management/sub-menu/${data.id}/edit" class="btn btn-outline-secondary btn-sm edit" title="Edit">
                         <i class="fas fa-pencil-alt"></i>
                     </a>`;
                 }
             },
         ];
-        PX.renderDataTable('dtMainMenu', {
+        PX.renderDataTable('dtSubMenu', {
             select: true,
-            url: 'admin/menu-management/main-menu/list',
+            url: 'admin/menu-management/sub-menu/list',
             columns: col_draft,
             pdf: [1, 2]
         });
     }
 })
 
-function dtMainMenu(table, api, op) {
+function dtSubMenu(table, api, op) {
     PX.deleteAll({
-        element: "deleteAllMainMenu",
-        script: "admin/menu-management/main-menu/delete-list",
+        element: "deleteAllSubMenu",
+        script: "admin/menu-management/sub-menu/delete-list",
         confirm: true,
         api,
     });
     PX.updateAll({
-        element: "updateAllMainMenu",
-        script: "admin/menu-management/main-menu/update-list",
+        element: "updateAllSubMenu",
+        script: "admin/menu-management/sub-menu/update-list",
         confirm: true,
         dataCols: {
             key: "ids",
@@ -124,6 +135,6 @@ function dtMainMenu(table, api, op) {
             type: "inflate_response_data"
         }
     });
-    PX?.dowloadPdf({ ...op, btn: "downloadMainMenuPdf", dataTable: "yes" })
-    PX?.dowloadExcel({ ...op, btn: "downloadMainMenuExcel", dataTable: "yes" })
+    PX?.dowloadPdf({ ...op, btn: "downloadSubMenuPdf", dataTable: "yes" })
+    PX?.dowloadExcel({ ...op, btn: "downloadSubMenuExcel", dataTable: "yes" })
 }
