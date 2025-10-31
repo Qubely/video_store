@@ -17,7 +17,7 @@
                                          <select class="form-control" name="main_menu_id" id="main_menu_id">
                                             <option value="">-- {{pxLang($data['lang'],'','common.text.option_select')}} --</option>
                                             @foreach ($data['mainMenus'] as $item)
-                                                <option {{($item?->main_menu_id == $item?->id) ? 'selected';''}} value="{{$item?->id}}">{{$item?->name}}</option>
+                                                <option {{($data['item']?->main_menu_id == $item?->id) ? 'selected':''}} value="{{$item?->id}}">{{$item?->name}}</option>
                                             @endforeach
                                          </select>
                                     </div>

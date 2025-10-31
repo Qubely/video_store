@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-md-10">
                     <div class="d-block">
-                       @foreach ($menus['menus'] as $item)
+                       @foreach ($menus['subMenus'] as $item)
                             <div class="d-inline-block menu-list">
                                 <div class="d-flex flex-row justify-content-start align-items-center pt-3 pb-3 pt-sm-0 pb-sm-0">
                                    <h6 class="fs-14 text-white m-0">{{$item['name']}}</h6>

@@ -18,5 +18,9 @@ class MainMenu extends Model
     ];
     //vpx_attach
 
+    public function subMenus()
+    {
+        return $this->hasMany(SubMenu::class,'main_menu_id','id');
+    }
 
 }

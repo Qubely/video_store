@@ -19,6 +19,7 @@ class SubMenuCrudController  extends Controller {
             $request->merge(['lang' => $this->lang]);
             return $next($request);
         });
+        $this->mainMenus = MainMenu::select(['id','name'])->get();
 
     }
 
@@ -32,7 +33,7 @@ class SubMenuCrudController  extends Controller {
     {
         $data = $this->iSubMenuCrudRepo->index($request);
         $data['lang'] = $this->lang;
-        $data['mainMenus'] = MainMenu::select(['id','name'])->get();
+        $data['mainMenus'] = $this->mainMenus;
         return view('admin.pages.menu-management.sub-menu.crud.index',compact('data'));
     }
 
@@ -69,6 +70,7 @@ class SubMenuCrudController  extends Controller {
     {
         $data = $this->iSubMenuCrudRepo->index($request,$id);
         $data['lang'] = $this->lang;
+        $data['mainMenus'] = $this->mainMenus;
         return view('admin.pages.menu-management.sub-menu.crud.index', compact('data'));
     }
 

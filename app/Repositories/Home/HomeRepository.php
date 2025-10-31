@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Home;
 
+use App\Models\MainMenu;
 use App\Repositories\BaseRepository;
 
 class HomeRepository extends BaseRepository implements IHomeRepository
@@ -42,54 +43,12 @@ class HomeRepository extends BaseRepository implements IHomeRepository
 
     private function getCategoryMenus()
     {
-        return [
-            [
-                'name' => '国产',
-                'uri' => '',
-                'menus' => [
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ],
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ],
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ]
-                ]
-            ],
-            [
-                'name' => '国产',
-                'uri' => '',
-                'menus' => [
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ],
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ]
-                ]
-            ],
-            [
-                'name' => '国产',
-                'uri' => '',
-                'menus' => [
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ],
-                    [
-                        'name' => '乱伦',
-                        'uri' => '',
-                    ]
-                ]
-            ],
-        ];
+        return MainMenu::with(['subMenus'=>function($q){
+            $q->select(['id','main_menu_id','slug','name'])->where([['status','=','Active']])->orderBy('serial','ASC');
+        }])
+        ->orderBy('serial','ASC')
+        ->where([['status','=','Active']])
+        ->get();
     }
 
     private function getCardSwiper()
